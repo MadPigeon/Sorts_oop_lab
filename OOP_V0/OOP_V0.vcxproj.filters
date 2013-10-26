@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Команды">
+      <UniqueIdentifier>{3e1dd2ca-012a-4f25-93ce-bd901855031e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Команды">
+      <UniqueIdentifier>{edf99f27-caad-4602-8c0c-824fcf14807e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Структура">
+      <UniqueIdentifier>{18994ac6-46a0-4d4d-9c06-8918212e1c9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Структура">
+      <UniqueIdentifier>{68adb365-2bb4-48c2-bb7e-f69b4ba9d09b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Вспомогательное">
+      <UniqueIdentifier>{532618f9-1881-406e-bcbb-598ccd5fec40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Вспомогательное">
+      <UniqueIdentifier>{02c78bd9-0b6d-4171-8940-c4c7ac00953c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Exit.cpp">
+      <Filter>Файлы исходного кода\Команды</Filter>
+    </ClCompile>
+    <ClCompile Include="Help.cpp">
+      <Filter>Файлы исходного кода\Команды</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Файлы исходного кода\Структура</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>Файлы исходного кода\Вспомогательное</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorts.cpp">
+      <Filter>Файлы исходного кода\Вспомогательное</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Файлы исходного кода\Вспомогательное</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence.cpp">
+      <Filter>Файлы исходного кода\Команды</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Help.h">
+      <Filter>Заголовочные файлы\Команды</Filter>
+    </ClInclude>
+    <ClInclude Include="Exit.h">
+      <Filter>Заголовочные файлы\Команды</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Заголовочные файлы\Структура</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommand.h">
+      <Filter>Заголовочные файлы\Структура</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
+      <Filter>Заголовочные файлы\Вспомогательное</Filter>
+    </ClInclude>
+    <ClInclude Include="Sorts.h">
+      <Filter>Заголовочные файлы\Вспомогательное</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence.h">
+      <Filter>Заголовочные файлы\Команды</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
