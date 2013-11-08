@@ -72,36 +72,81 @@ void quick_sort(int l, int r, long *arr, int n)
 	if(left<r) quick_sort(left,r-1,arr,n);//рекурси€ выполн€етс€ дл€ двух подмассивов,ни в одном из которых не задействован опорный элемент только что прошедшего ципла
 	if(right>l) quick_sort(l+1,right,arr,n);
 	}
-void heap_build (long *arr, int n) //создание пирамиды(дерева), по принципу:родитель старше либо равен потомкам. P- это адресс предка, n- кол-во элементов массива,
-	//таким образом самый старший элемент будет лежать в вершине пирамиды, в arr[0]
+/*
+	¬спомогательна€ функци€, возвращающа€
+	массиву свойства пирамиды
+*/
+void shiftDown(long *array, int n)
 {
-	for (int i = n/2 - 1; i >= 0; i--)//идем от последнего элемента к началу
-    {
-		int p=i;
-		while (2 * p + 1 < n) //проверка существовани€ потомка
+	int i = 0, j;
+	while (2*i+1 <= n)
+	{
+		j = i;
+		if (2*i+2 <= n)
 		{
-			int x = 2 * p +1;// x  индекс  первого потомка
-			if (x+1 < n && arr[x+1] >= arr[x])//если существует второй потомок и он больше первого рассматриваем его 
+			if (array[2*i+1] > array[2*i+2])
 			{
-			   x = 2 * p + 2;
+				j = 2*i+1;
 			}
-			if (arr[p] < arr[x]) //если самый большой из потомков больше предка, мен€ем их местами
+			else
 			{
-				swap(arr[p], arr[x]);
-				p=x; //потомком становитс€ следующий элемент
-			} 
-			else break;
+				j = 2*i+2;
+			}
+		}
+		else if (array[2*i+1] > array[i])
+		{
+			j = 2*i+1;
+		}
+		if (array[i] < array[j])
+		{
+			swap(array[i],array[j]);
+			i = j;
+		}
+		else
+		{
+			break;
 		}
 	}
 }
-void heap_sort(long *arr,int n)
+
+/*
+	¬спомогательна€ функци€, выстраивающа€
+	массив в пирамиду
+*/
+void heapify(long *array, int n)
 {
-	heap_build(arr,n);//создаем из массива пирамиду
-	while(n>0)//пока существуют рассматриваемые элементы массива
+	int i,j;
+	for (i = 1; i < n; i++)
 	{
-		swap(arr[n-1],arr[0]); //записываем самый старший элемент в конец массива
-		n--;//рассматриваем массив без последнего элемента
-		heap_build(arr,n); //оп€ть распредел€ем массив по свойству	
+		if (array[i]>array[(i-1)/2])
+		{
+			j = i;
+			while (j != 0)
+			{
+				if (array[j]<=array[(j-1)/2])
+				{
+					break;
+				}
+				swap(array[j],array[(j-1)/2]);
+				j = (j-1)/2;
+			}
+		}
+	}
+}
+
+/*
+	Ќепосредственно сортировка
+	array Ч массив,
+	n Ч его размер.
+*/		
+void heap_sort(long *array, int n)
+{
+	heapify(array, n);
+	int end = n-1;
+	while (end > 0)
+	{
+		swap(array[0],array[end--]);
+		shiftDown(array, end);
 	}
 }
 void Sorts(long *arr,int n, int sort)
