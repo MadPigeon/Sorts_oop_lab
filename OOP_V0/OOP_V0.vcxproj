@@ -64,7 +64,10 @@
     <ClCompile Include="Exit.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Help.cpp" />
+    <ClCompile Include="Iterations.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Random.cpp" />
     <ClCompile Include="Sequence.cpp" />
     <ClCompile Include="Sorts.cpp" />
     <ClCompile Include="timer.cpp" />
@@ -75,6 +78,9 @@
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Help.h" />
     <ClInclude Include="ICommand.h" />
+    <ClInclude Include="Iterations.h" />
+    <ClInclude Include="Print.h" />
+    <ClInclude Include="Random.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="Sorts.h" />
   </ItemGroup>

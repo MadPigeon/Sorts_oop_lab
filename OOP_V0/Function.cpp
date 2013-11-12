@@ -126,7 +126,7 @@ void test(long *arr,int n, int iter)
 		comand_sort( "Heap sort  ", result[3] );
 	}
 }
-void parse_str(string & input, vector<string> & list)
+/*void parse_str(string & input, vector<string> & list)
 {
 	string temp;	// переменная для копирования и проверки
 	stringstream sstream;	// поток строк для разделения
@@ -136,22 +136,7 @@ void parse_str(string & input, vector<string> & list)
 		sstream >> temp;
 		list.push_back(temp);
 	}
-}
-void parse_str_int(string & input, vector<string> & list)
-{
-	string temp;	// переменная для копирования и проверки
-	stringstream sstream, defect;	// поток строк для разделения
-	sstream << input;	// складываем строку в String Builder
-	sstream >> temp; list.push_back(temp);	// копируем название команды без ограничений на длину
-	while (!sstream.eof())	// копируем числа не длиннее 10 символов
-	{
-		sstream >> temp;
-		if (temp.length() < 11) list.push_back(temp);
-		else defect << temp;
-	}
-	input.clear();
-	defect >> input;
-}
+}*/
 void show(long *arr, int n)
 {
 	int i;

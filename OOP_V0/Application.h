@@ -11,6 +11,10 @@ using namespace std;
 class Application{
 	map<string,ICommand*> commandMap;
 	vector<ICommand *> commands;
+	vector <int> arr;
+	long iter;
+
+	void parse_str(string & input, vector<string> & list);
 public:
 	Application(void);
 	virtual ~Application(void);
@@ -19,4 +23,10 @@ public:
 	virtual const vector<ICommand *> & get_command_list() const;		//  Возвращает список доступных команд
 	virtual void run(istream & in, ostream &out);	// Запускает цикл обработки команд
 	virtual void add_command(ICommand * cmd);	// Добавляет команду к списку
+	
+	virtual vector <int> & get_arr();
+	virtual void add_to_arr(long val);
+	virtual void clear_arr();
+	virtual void set_iter(long val);
+	virtual long get_iter();
 };

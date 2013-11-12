@@ -1,4 +1,4 @@
-// Команда " Помощь"
+// Команда " Последовательность"
 #pragma once
 #include "ICommand.h"
 #include "Application.h"
