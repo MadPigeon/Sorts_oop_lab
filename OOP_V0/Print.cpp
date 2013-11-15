@@ -28,12 +28,12 @@ void PrintCommand::execute (vector <string> params)
 		cout << endl << "————————————————————————————————————————————————————————————————————\n";
 		if (params[0] != "")
 		{
-			ofstream the_file(params[0]);
+			ofstream output_file(params[0]);
 			for (i = 0; i < n; i++)
 			{
-				the_file << mass[i] << " ";
+				output_file << mass[i] << " ";
 			}
-			the_file.close();
+			output_file.close();
 			cout << "Òàêæå ïîñëåäîâàòåëüíîñòü ñîõðàíåíà â ôàéë: \"" << params[0] << "\"\n";
 		}
 	}
