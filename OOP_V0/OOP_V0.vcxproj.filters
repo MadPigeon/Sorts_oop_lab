@@ -66,6 +66,9 @@
     <ClCompile Include="Iterations.cpp">
       <Filter>Файлы исходного кода\Команды</Filter>
     </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Файлы исходного кода\Команды</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Help.h">
@@ -96,6 +99,9 @@
       <Filter>Заголовочные файлы\Команды</Filter>
     </ClInclude>
     <ClInclude Include="Iterations.h">
+      <Filter>Заголовочные файлы\Команды</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
       <Filter>Заголовочные файлы\Команды</Filter>
     </ClInclude>
   </ItemGroup>
