@@ -14,11 +14,16 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+<<<<<<< HEAD
 #include <iomanip>
+=======
+#include <fstream>
+>>>>>>> origin/master
 
 using namespace std;
 
-Application::Application() : iter(100)
+Application::Application() : iter(100) {}
+Application::Application(int argc, char **argv) : iter(100)
 {
 	add_command(new HelpCommand(this));
 	add_command(new Exit(this));
@@ -26,7 +31,21 @@ Application::Application() : iter(100)
 	add_command(new PrintCommand(this));
 	add_command(new RandomCommand(this));
 	add_command(new IterationsCommand(this));
+<<<<<<< HEAD
     add_command(new TestCommand(this));
+=======
+
+	if (argc > 1)
+	{
+		ifstream the_file(argv[1]);
+		string temp;
+		while (getline(the_file, temp))
+		{
+			commands_from_file.push_back(temp);
+		}
+		the_file.close();
+	}
+>>>>>>> origin/master
 }
 Application::~Application(void)
 {
@@ -52,13 +71,27 @@ void Application::run(istream & in, ostream &out)
 	ICommand * cmd;
 	string input,name;
 	vector<string> params;
+	int i = 0, n = commands_from_file.size();
 	while (true)
 	{
-		out << "|:>";
-		in >> name;
-		getline(in, input);
 		params.clear();
-		parse_str(input, params);
+		out << "|:>";
+		if (i < n)
+		{
+			// импорт команд из файла
+			out << commands_from_file[i] << endl;
+			parse_str(commands_from_file[i], params);
+			name = params[0];
+			params.erase(params.begin());
+		}
+		else
+		{
+			// нормальный путь
+			in >> name;
+			getline(in, input);
+			parse_str(input, params);
+		}
+
 		if (cmd = get_command(name))
 		{
 			cmd->execute(params);
@@ -68,6 +101,7 @@ void Application::run(istream & in, ostream &out)
 			out << "Команда не найдена. Не будем показывать пальцем,"
 				<< "но кто-то допустил ошибку.\n";
 		}
+		i++;
 	}
 }
 	

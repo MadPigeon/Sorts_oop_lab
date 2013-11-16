@@ -20,7 +20,8 @@ void Sequence::execute(vector<string> input)
 		string_size = input[str_numb].size();
 		if(string_size <= 10)
 		{
-			for(i = 0; i < string_size; i++)// Записываем число в массив Number
+			for (i = 0; i < 10; i++) number[i] = '\0';
+			for(i = 0; i < string_size; i++)
 			{	
 				number[i] = input[str_numb][i];
 			}

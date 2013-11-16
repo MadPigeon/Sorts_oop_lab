@@ -7,9 +7,9 @@
 using namespace std;
 
 
-void main()
+void main(int argc, char **argv)
 {
 	setlocale (LC_ALL, "Russian");
-	Application App;
-	App.run(cin,cout);	
+	Application App(argc, argv);
+	App.run(cin,cout);
 }
