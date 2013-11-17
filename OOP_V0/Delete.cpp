@@ -13,7 +13,7 @@ void DeleteCommand::execute(vector <string> params)
 		if (params[0] != before) success = true;
 	}
 	if (success) cout << " удалена.";
-	else cout << "не существует.";
+	else cout << " не существует.";
 	cout << endl;
 }
 const string & DeleteCommand::get_name() const{ return name; }

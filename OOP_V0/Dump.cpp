@@ -3,6 +3,7 @@
 
 void DumpCommand::execute(vector <string> params)
 {
+	unsigned int i, n;
 	bool success = false;
 	cout << "Переменная ";
 	if (params.size() > 0)
@@ -10,10 +11,32 @@ void DumpCommand::execute(vector <string> params)
 		string before = params[0];
 		cout << params[0];
 		app->try_get_set(params);
-		if (params[0] != before) success = true;
+		if (params[0] != before)
+		{
+			success = true;
+			n = params.size();
+			cout << " = ";
+			if (n > 1)
+			{
+				cout << '[';
+				for(i = 0; i < n - 1; i++)
+				{
+					cout << params[i] << ' ';
+				}
+				cout << params[ n - 1 ] << "]";
+			}
+			else if(params[0][0] >= '0' && params[0][0] <= '9')
+			{
+				cout << params[0];
+			}
+			else
+			{
+				cout << '"' << params[0] << '"';
+			}
+		}
+
 	}
-	if (success) cout << " = " << params[0];
-	else cout << "не существует.";
+	if (!success) cout << " не существует.";
 	cout << endl;
 }
 const string & DumpCommand::get_name() const{ return name; }
