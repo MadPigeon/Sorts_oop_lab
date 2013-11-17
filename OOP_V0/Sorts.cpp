@@ -42,7 +42,7 @@ void shell_sort(vector <int> &arr, int arr_size)
 }
 void quick_sort(int l, int r, vector <int> &arr, int arr_size)
 	{
-		r = r - 1;
+		
 		int left = l, right = r,// значения начала и конца массива запоминаются для рекурсии
 			x = (l + r) / 2;  //-индекс опорного элемента
 			 

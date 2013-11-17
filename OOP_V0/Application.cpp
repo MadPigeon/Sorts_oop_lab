@@ -162,7 +162,7 @@ void Application::sorts(vector <int> &copy,int sorts_type,int copy_size)
 			break;
 	case 2: shell_sort(copy,copy_size);
 			break;
-	case 3: quick_sort(0,copy_size,copy,copy_size);
+	case 3: quick_sort(0,copy_size - 1,copy,copy_size);
 			break;
 	case 4: heap_sort(copy,copy_size);
 			break;
