@@ -46,7 +46,7 @@ Application::Application(int argc, char **argv) : iter(100)
 }
 Application::~Application(void)
 {
-	for (int i = 0; i < commands.size(); i++)
+	for (unsigned int i = 0; i < commands.size(); i++)
 	{
 		delete commands[i];
 	}
