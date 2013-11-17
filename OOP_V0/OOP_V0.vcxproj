@@ -66,6 +66,7 @@
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="Iterations.cpp" />
+    <ClCompile Include="Load.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="Random.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="Help.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="Iterations.h" />
+    <ClInclude Include="Load.h" />
     <ClInclude Include="Print.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Sequence.h" />

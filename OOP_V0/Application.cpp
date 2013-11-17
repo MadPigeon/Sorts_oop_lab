@@ -8,6 +8,7 @@
 #include "Iterations.h"
 #include "Test.h"
 #include "Sorts.h"
+#include "Load.h"
 
 #include "Functions.h"
 #include <vector>
@@ -30,6 +31,7 @@ Application::Application(int argc, char **argv) : iter(100)
 	add_command(new RandomCommand(this));
 	add_command(new IterationsCommand(this));
     add_command(new TestCommand(this));
+    add_command(new LoadCommand(this));
 
 	if (argc > 1)
 	{
@@ -159,7 +161,7 @@ void Application::sorts(vector <int> &copy,int sorts_type,int copy_size)
 			break;
 	}
 }
-void Application::Output_average_time(string sorts_name, double average_time)
+void Application::output_average_time(string sorts_name, double average_time)
 {
     cout << sorts_name;
 	cout << "   ";

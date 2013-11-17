@@ -16,11 +16,11 @@ class Application{
 	long iter;
 	vector <string> commands_from_file;
 
-	void parse_str(string & input, vector<string> & list);
+	
 public:
 	Application(void);
 	virtual ~Application(void);
-
+	virtual void parse_str(string & input, vector<string> & list);
 	virtual ICommand * get_command(const string & key);	// Возвращает объект "команда" по ключу, его нет - возвращает 0
 	virtual const vector<ICommand *> & get_command_list() const;		//  Возвращает список доступных команд
 	virtual void run(istream & in, ostream &out);	// Запускает цикл обработки команд
@@ -35,5 +35,5 @@ public:
 	virtual long get_iter();
 	virtual inline long long gettimeus();
     virtual void sorts(vector <int> &copy, int sorts_type,int copy_size);
-    virtual void Output_average_time(string, double average_time);
+    virtual void output_average_time(string, double average_time);
 };

@@ -17,8 +17,6 @@ void PrintCommand::execute (vector <string> params)
 	{
 		cout << endl << "Êîëè÷åñòâî èòåðàöèé "<< app->get_iter() <<endl;
 		cout << "À ìàññèâ íàñòîëüêî ïóñò, ÷òî %øóòêà ïðî ïóñòîé ìàññèâ%\n";
-		cout << "Êîëè÷åñòâî èòåðàöèé " << app->get_iter() << endl;
-		cout << "À ìàññèâ íàñòîëüêî ïóñò, ÷òî %øóòêà ïðî ïóñòîé ìàññèâ%\n";
 	}
 	else
 	{
@@ -26,7 +24,7 @@ void PrintCommand::execute (vector <string> params)
 		cout << endl << "————————————————————————————————————————————————————————————————————\n";
 		for(i = 0; i < n; i++)
 		{
-			cout << ' ' << mass[i] << ' ';
+			cout << mass[i] << "  ";
 		}
 		cout << endl << "————————————————————————————————————————————————————————————————————\n";
 		if (params[0] != "")

@@ -63,10 +63,10 @@ void TestCommand::execute(vector <string> params)
 		{
 			average_time[i] = double(sorts_time[i]) / iter;
 		}
-		app->Output_average_time( "Bubble sort", average_time[0] );
-		app->Output_average_time( "Shell sort ", average_time[1] );
-		app->Output_average_time( "Quick sort ", average_time[2] );
-		app->Output_average_time( "Heap sort  ", average_time[3] );
+		app->output_average_time( "Bubble sort", average_time[0] );
+		app->output_average_time( "Shell sort ", average_time[1] );
+		app->output_average_time( "Quick sort ", average_time[2] );
+		app->output_average_time( "Heap sort  ", average_time[3] );
 	}
 
 
