@@ -20,7 +20,7 @@ void PrintCommand::execute (vector <string> params)
 	}
 	else
 	{
-        cout << "Êîëè÷åñòâî èòåðàöèé "<< app->get_iter() <<endl;
+		cout << endl << "Êîëè÷åñòâî èòåðàöèé " << app->get_iter() << endl;
 		cout << endl << "————————————————————————————————————————————————————————————————————\n";
 		for(i = 0; i < n; i++)
 		{

@@ -34,6 +34,6 @@ public:
 	virtual void set_iter(long val);
 	virtual long get_iter();
 	virtual inline long long gettimeus();
-    virtual void sorts(vector <int> &copy, int sorts_type,int copy_size);
-    virtual void Output_average_time(string, double average_time);
+	virtual void sorts(vector <int> &copy, int sorts_type,int copy_size);
+	virtual void Output_average_time(string, double average_time);
 };
