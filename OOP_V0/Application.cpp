@@ -115,6 +115,7 @@ void Application::parse_str(string & input, vector<string> & list)
 	string temp;	// переменная для копирования и проверки
 	stringstream sstream;	// поток строк для разделения
 	sstream << input;	// складываем строку в String Builder
+	list.clear();
 	while (!sstream.eof())	// складываем в вектор строки по одной
 	{
 		sstream >> temp;
@@ -175,7 +176,7 @@ void Application::add_to_set(string name, vector <string> value)
 }
 void Application::try_get_set(vector <string> & params)
 {
-	if (SetMap.find(params[0]) != SetMap.end())
+	if (params.size() > 0 && SetMap.find(params[0]) != SetMap.end())
 	{
 		params = SetMap[params[0]];
 	}
