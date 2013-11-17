@@ -31,8 +31,8 @@ Application::Application(int argc, char **argv) : iter(100)
 	add_command(new PrintCommand(this));
 	add_command(new RandomCommand(this));
 	add_command(new IterationsCommand(this));
-    add_command(new TestCommand(this));
-    add_command(new LoadCommand(this));
+	add_command(new TestCommand(this));
+	add_command(new LoadCommand(this));
 	add_command(new SetCommand(this));
 
 	if (argc > 1)
@@ -178,6 +178,5 @@ void Application::try_get_set(vector <string> & params)
 	if (SetMap.find(params[0]) != SetMap.end())
 	{
 		params = SetMap[params[0]];
-		params.erase(params.begin());
 	}
 }
