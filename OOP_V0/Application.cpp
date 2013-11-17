@@ -10,6 +10,7 @@
 #include "Sorts.h"
 #include "Load.h"
 #include "Set.h"
+#include "Dump.h"
 
 #include "Functions.h"
 #include <vector>
@@ -34,6 +35,7 @@ Application::Application(int argc, char **argv) : iter(100)
 	add_command(new TestCommand(this));
 	add_command(new LoadCommand(this));
 	add_command(new SetCommand(this));
+	add_command(new DumpCommand(this));
 
 	if (argc > 1)
 	{
