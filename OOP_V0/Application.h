@@ -38,4 +38,5 @@ public:
 	virtual void output_average_time(string, double average_time);
 	virtual void add_to_set(string, vector <string>);
 	virtual void try_get_set(vector <string> &);
+	virtual void try_delete_set(vector <string> &);
 };

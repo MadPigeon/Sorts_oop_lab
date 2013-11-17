@@ -78,6 +78,9 @@
     <ClCompile Include="Dump.cpp">
       <Filter>Файлы исходного кода\Команды</Filter>
     </ClCompile>
+    <ClCompile Include="Delete.cpp">
+      <Filter>Файлы исходного кода\Команды</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Help.h">
@@ -120,6 +123,9 @@
       <Filter>Заголовочные файлы\Команды</Filter>
     </ClInclude>
     <ClInclude Include="Dump.h">
+      <Filter>Заголовочные файлы\Команды</Filter>
+    </ClInclude>
+    <ClInclude Include="Delete.h">
       <Filter>Заголовочные файлы\Команды</Filter>
     </ClInclude>
   </ItemGroup>

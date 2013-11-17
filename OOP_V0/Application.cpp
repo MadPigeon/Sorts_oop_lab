@@ -11,6 +11,7 @@
 #include "Load.h"
 #include "Set.h"
 #include "Dump.h"
+#include "Delete.h"
 
 #include "Functions.h"
 #include <vector>
@@ -36,6 +37,7 @@ Application::Application(int argc, char **argv) : iter(100)
 	add_command(new LoadCommand(this));
 	add_command(new SetCommand(this));
 	add_command(new DumpCommand(this));
+	add_command(new DeleteCommand(this));
 
 	if (argc > 1)
 	{
@@ -181,5 +183,13 @@ void Application::try_get_set(vector <string> & params)
 	if (params.size() > 0 && SetMap.find(params[0]) != SetMap.end())
 	{
 		params = SetMap[params[0]];
+	}
+}
+void Application::try_delete_set(vector <string> & params)
+{
+	if (params.size() > 0 && SetMap.find(params[0]) != SetMap.end())
+	{
+		SetMap.erase(params[0]);
+		params[0] = "";
 	}
 }
