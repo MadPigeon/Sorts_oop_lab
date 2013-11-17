@@ -13,7 +13,8 @@ void DumpCommand::execute(vector <string> params)
 		if (params[0] != before) success = true;
 	}
 	if (success) cout << " = " << params[0];
-	else cout << "не существует.\n";
+	else cout << "не существует.";
+	cout << endl;
 }
 const string & DumpCommand::get_name() const{ return name; }
 const string & DumpCommand::get_help() const{ return description; }
