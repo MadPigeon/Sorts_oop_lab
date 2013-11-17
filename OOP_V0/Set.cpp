@@ -12,26 +12,13 @@ SetCommand::SetCommand(Application *appl) : name("set"), description("Задает зна
 void SetCommand::execute (vector <string> params)
 {
 	string name = params[0];
-	//params.erase(params.begin());
-	if(params[1][0] == '\"')
+	params.erase(params.begin());
+	if (params[0][0] < '0' || params[0][0] > '9')
 	{
-		params[0] = "file"; 
-	} 
-	if(params[1][0] == '[')
-	{
-		params[0] = "sequence";
-	}
-	if(params[1][0] > '0' && params[1][0] < '9')
-	{
-		params[0] = "iterations";
-	}
-	else
-	{
-		params[1].erase(params[1].begin());
+		params[0].erase(params[0].begin());
 		params[params.size() - 1].erase(params[params.size() - 1].end() - 1);
 	}
 	app->add_to_set(name, params);
-
 }
 SetCommand::~SetCommand(void){}
 const string & SetCommand::get_name() const
