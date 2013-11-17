@@ -36,9 +36,9 @@ LoadCommand::~LoadCommand(void){}
 
 const string & LoadCommand:: get_name() const 
 {
-    return name;
+	return name;
 }
 const string & LoadCommand:: get_help() const
 {
-    return description;
+	return description;
 }

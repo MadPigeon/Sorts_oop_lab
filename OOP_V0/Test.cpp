@@ -8,37 +8,37 @@
 using namespace std;
 
 TestCommand::TestCommand(Application *appl) : name("test"),
-    description("Запускает работу алгоритмов сортировки. Каждый алгоритм сортирует последовательность sequence, iterations раз."
-                "Выводит на экран среднее время работы алгоритмов"),app(appl){}
+	description("Запускает работу алгоритмов сортировки. Каждый алгоритм сортирует последовательность sequence, iterations раз."
+				"Выводит на экран среднее время работы алгоритмов"),app(appl){}
 void TestCommand::execute(vector <string> params)
 {
-    vector <int> arr = app->get_arr();
-       vector <int> copy;
-    int arr_size = arr.size(),
-        iter = app->get_iter(),
-        l, i, sorts_type = 1;
-    long long sorts_time[4] = {0,0,0,0},
-		      iter_time;
-    double average_time [4] = {0,0,0,0};
+	vector <int> arr = app->get_arr();
+	   vector <int> copy;
+	int arr_size = arr.size(),
+		iter = app->get_iter(),
+		l, i, sorts_type = 1;
+	long long sorts_time[4] = {0,0,0,0},
+			  iter_time;
+	double average_time [4] = {0,0,0,0};
 
-    if(arr_size == 0)
+	if(arr_size == 0)
 	{
 		cout << endl << "В массиве нет элементов.\n";	
 	}
-    else
+	else
 	{
 		cout << "\nКоличество итераций " << iter;
 		cout << "\nРазмер массива " << arr_size;
 		cout << "\nМассив \n";
 		// если массив большой то вывести первые 10 чисел и сказать что в массиве еще N-10 чисел
 		if( arr_size <= 10 )
-        {
-		    for( i = 0; i < arr_size; i ++)
-		    {
-			    cout << arr[i] << " ";
-		    }
-            cout << endl;
-        }
+		{
+			for( i = 0; i < arr_size; i ++)
+			{
+				cout << arr[i] << " ";
+			}
+			cout << endl;
+		}
 		else
 		{
 			for( i = 0; i < 10; i ++)	
@@ -48,6 +48,8 @@ void TestCommand::execute(vector <string> params)
 			cout << "... в массиве еще " << arr_size - 10 << " чисел\n";	
 		}
 		
+		cout << "Массивы после сортировки разными алгоритмами.\n";
+		cout << "1)bubble\n2)shell\n3)quick\n4)heap\n";
 		for( sorts_type = 1; sorts_type < 5; sorts_type++)
 		{
 			for(i = 0; i < iter; i++)
@@ -58,7 +60,6 @@ void TestCommand::execute(vector <string> params)
 				sorts_time[sorts_type - 1] += app->gettimeus() + iter_time;
 				if(i == 0)
 				{
-					cout << endl;
 					for(l = 0; l < arr_size; l++)
 					{
 						cout << copy[l] << ' ';
