@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include "timer.cpp"
-#include "Sorts.h"
+#include "sorts.h"
 #include <vector>
 
 using namespace std;
@@ -111,7 +111,7 @@ void test(long *arr,int n, int iter)
 			{
 				copy_array(arr,copy,n);
 				iter_time = - gettimeus();
-				Sorts(copy, n, j);
+				//sorts(copy, n, j);
 				sorts_time[j-1] += gettimeus() + iter_time;
 			}
 		}

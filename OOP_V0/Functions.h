@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+
 using namespace std;
 extern bool start_with(string,const char []);	// Проверяет, закончилось ли название команды 
 extern void comand(string comand, string desk);	// выводит команду с ее описанием 

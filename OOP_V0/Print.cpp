@@ -15,11 +15,12 @@ void PrintCommand::execute (vector <string> params)
 	int i, n = mass.size();
 	if(n == 0)
 	{
-		cout << "Êîëè÷åñòâî èòåðàöèé " << app->get_iter() << endl;
+		cout << endl << "Êîëè÷åñòâî èòåðàöèé "<< app->get_iter() <<endl;
 		cout << "À ìàññèâ íàñòîëüêî ïóñò, ÷òî %øóòêà ïðî ïóñòîé ìàññèâ%\n";
 	}
 	else
 	{
+        cout << "Êîëè÷åñòâî èòåðàöèé "<< app->get_iter() <<endl;
 		cout << endl << "————————————————————————————————————————————————————————————————————\n";
 		for(i = 0; i < n; i++)
 		{
