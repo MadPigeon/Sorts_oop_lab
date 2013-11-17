@@ -10,26 +10,24 @@ LoadCommand::LoadCommand(Application *appl): name("load"), description("Считывае
 
 void LoadCommand::execute(vector <string> params)
 {
-	ICommand *cmd =app-> get_command("sequence");
-    app ->clear_arr();
-	vector <string> seq;
-    string temp;
-    ifstream myfile ("Sequence_for_load.txt");
-    if(myfile == NULL )
-    {
-        cout << "Не удалось загрузить последовательность\n";
-    }
-    else
-    {
-        while(!myfile.eof())
-        {
-            getline(myfile,temp);                
-        }
-		app ->parse_str(temp,seq); 
-        myfile.close();
-		cmd -> execute(seq);
-        cout << "Последовательность загружена\n";
-    }
+	ICommand *cmd = app->get_command("sequence");
+	ifstream input_file(params[0]);
+	app->clear_arr();
+	if(input_file == NULL)
+	{
+		cout << "Не удалось загрузить последовательность\n";
+	}
+	else
+	{
+		while(!input_file.eof())
+		{
+			getline(input_file, params[0]);                
+		}
+		app->parse_str(params[0], params);
+		cmd->execute(params);
+		input_file.close();
+		cout << "Последовательность загружена\n";
+	}
 }
 
 LoadCommand::~LoadCommand(void){}
