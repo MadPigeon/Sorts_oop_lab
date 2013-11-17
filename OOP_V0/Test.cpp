@@ -4,7 +4,6 @@
 
 #include "Test.h"
 
-
 using namespace std;
 
 TestCommand::TestCommand(Application *appl) : name("test"),
