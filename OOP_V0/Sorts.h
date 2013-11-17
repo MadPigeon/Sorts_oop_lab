@@ -1,7 +1,10 @@
 #pragma once
-extern void bubble_sort(long *,int );
-extern void shell_sort(long *,int );
-extern void quick_sort(int , int ,  long *, int );
-extern void heap_build (long *, int );
-extern void heap_sort( long *,int );
-extern void Sorts(long *, int, int);
+#include <vector>
+#include "Application.h"
+
+     void bubble_sort( vector <int> &, int );
+     void shell_sort( vector <int> &, int );
+     void quick_sort( int, int, vector <int> &, int );
+     void shift_down(vector <int> &, int n);
+     void heapify(vector <int> &, int n);
+     void heap_sort( vector <int> &, int );

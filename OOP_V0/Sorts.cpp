@@ -1,105 +1,107 @@
-#include<iostream>
+#include <iostream>
+#include "sorts.h"
 using namespace std;
-void bubble_sort(long *arr,int n)//сортировка пузырьком
+
+void bubble_sort(vector <int> &arr, int arr_size)//сортировка пузырьком
 	{	 
-		int j,i;
-		for(j=0;j<n;j++)//с каждым проходом по циклу размер массива уменьшается на 1 элемент с конца, для уменьшения количества сравнений
+		int j, i;
+		for(j = 0; j < arr_size; j++)//с каждым проходом по циклу размер массива уменьшается на 1 элемент с конца, для уменьшения количества сравнений
 		{
-			for(i=0;i<n-j-1;i++)
+			for(i = 0; i < arr_size - j - 1; i++)
 			{
-				if(arr[i]>arr[i+1])//условие обмена элементов
+				if(arr[i] > arr[i + 1])//условие обмена элементов
 				{
-					swap(arr[i],arr[i+1]);//обмен элементов расположенных в неправильном порядке	
+					swap(arr[i], arr[i + 1]);//обмен элементов расположенных в неправильном порядке	
 				}
 			}
 		}
 	}
-void shell_sort(long *arr,int n) 
+void shell_sort(vector <int> &arr, int arr_size) 
 {
-		int i,step;
-		step=n/2;//первоначальное значение шага
-		while(step>=1)//сортировка происходит до того момента, пока шаг больше или равен 1
+		int i, 
+		    step = arr_size / 2;//первоначальное значение шага
+		while(step >= 1)//сортировка происходит до того момента, пока шаг больше или равен 1
 		{
-		for(i=step;i<n;i++)
+		for(i = step; i < arr_size; i++)
 			/*  начиная с элемента массива, индекс которого равен значению шага, идем по
-				массиву, сравнивая элемент i и элемент с индексом i-step
-			*/
+				массиву, сравнивая элемент i и элемент с индексом i-step*/
 		{
-			if(arr[i]<arr[i-step])
+			if(arr[i] < arr[i - step])
 			{
-				swap(arr[i],arr[i-step]);
-				if(i>=2*step)/*Если обмен элементов произошел,когда i было больше или равно значению
-							 step*2, возвращаем i на значение i-step-1 назад для того, чтобы не 
-							 пропустить недосортированные элементы.*/
+				swap(arr[i], arr[i - step]);
+				if(i >= 2 * step)/*Если обмен элементов произошел,когда i было больше или равно значению
+							     step*2, возвращаем i на значение i-step-1 назад для того, чтобы не 
+							     пропустить недосортированные элементы.*/
 				{
-					i=i-step-1;
+					i = i - step - 1;
 				}
 			}
 		}	
-		step=step/2;/*в случае если все элементы рассположены правильно уменьшаем step в два раза*/
+		step = step / 2;/*в случае если все элементы рассположены правильно уменьшаем step в два раза*/
 		}
 }
-void quick_sort(int l, int r, long *arr, int n)
+void quick_sort(int l, int r, vector <int> &arr, int arr_size)
 	{
-		
-		int x=(l+r)/2;  //-индекс опорного элемента
-		int left=l,right=r; //-запоминание начала и конца массива для рекурсии
+		r = r - 1;
+		int left = l, right = r,// значения начала и конца массива запоминаются для рекурсии
+            x = (l + r) / 2;  //-индекс опорного элемента
+		     
 	
-		while(l<r) //-условие обеспечивает выход из цикла
+		while(l < r) //-условие обеспечивает выход из цикла
 		{	
-			while(arr[l] <= arr[x] && l!=x) l++; //прохождение массива слева и справа, до нахождения элементов не удовлетворяющих условиям
-			while(arr[r] >= arr[x] && r!=x) r--;//-условия l!=x и r!=x не позволяют левой границе массива(l) и правой границе массива(r) проходить дальше индекса опорного элемента Х
+			while(arr[l] <= arr[x] && l != x) l++; //прохождение массива слева и справа, до нахождения элементов не удовлетворяющих условиям
+			while(arr[r] >= arr[x] && r != x) r--;//-условия l!=x и r!=x не позволяют левой границе массива(l) и правой границе массива(r) проходить дальше индекса опорного элемента Х
 
 
 			//далее условия arr[x] < arr[l] и arr[x] > arr[r] обеспечиваю невозможность зацикливания if-ов( проверяют упорядоченность элементов по возростанию)
 
-			if(r==x && arr[x] < arr[l]) //-обмен значений элементов массива, когда правая граница массива равна индексу опорного элемента 
+			if(r == x && arr[x] < arr[l]) //-обмен значений элементов массива, когда правая граница массива равна индексу опорного элемента 
 			{
 				swap( arr[x] , arr[l] );
 				x = l;					//-перемещение индекса опорного элемента к его значению
 			}
-			if(l==x && arr[x] > arr[r]) //-обмен значений элементов массива, когда левая граница массива равна индексу опорного элемента 
+			if(l == x && arr[x] > arr[r]) //-обмен значений элементов массива, когда левая граница массива равна индексу опорного элемента 
 			{
 				swap( arr[x] , arr[r] );
 				x = r;					//-перемещение индекса опорного элемента к его значению
 			}
-			if(l < r && r!=x && l!=x)	//-обмен значений элементов массива, когда ни l ни r не равны индексу опорного элемента 
+			if(l < r && r != x && l != x)	//-обмен значений элементов массива, когда ни l ни r не равны индексу опорного элемента 
 			{
 				swap( arr[l] , arr[r] );	
 			}
 		
 		}
-	if(left<r) quick_sort(left,r-1,arr,n);//рекурсия выполняется для двух подмассивов,ни в одном из которых не задействован опорный элемент только что прошедшего ципла
-	if(right>l) quick_sort(l+1,right,arr,n);
+	if(left < r) quick_sort(left, r - 1, arr, arr_size);//рекурсия выполняется для двух подмассивов,ни в одном из которых не задействован опорный элемент только что прошедшего ципла
+	if(right > l) quick_sort(l + 1, right, arr, arr_size);
 	}
 /*
 	Вспомогательная функция, возвращающая
 	массиву свойства пирамиды
 */
-void shiftDown(long *array, int n)
+void shift_down(vector <int> &arr, int arr_size)
 {
 	int i = 0, j;
-	while (2*i+1 <= n)
+	while (2 * i + 1 <= arr_size)
 	{
 		j = i;
-		if (2*i+2 <= n)
+		if (2 * i + 2 <= arr_size)
 		{
-			if (array[2*i+1] > array[2*i+2])
+			if (arr[2 * i + 1] > arr[2 * i + 2])
 			{
-				j = 2*i+1;
+				j = 2 * i + 1;
 			}
 			else
 			{
-				j = 2*i+2;
+				j = 2 * i + 2;
 			}
 		}
-		else if (array[2*i+1] > array[i])
+		else if (arr[2 * i + 1] > arr[i])
 		{
-			j = 2*i+1;
+			j = 2 * i + 1;
 		}
-		if (array[i] < array[j])
+		if (arr[i] < arr[j])
 		{
-			swap(array[i],array[j]);
+			swap(arr[i], arr[j]);
 			i = j;
 		}
 		else
@@ -113,22 +115,22 @@ void shiftDown(long *array, int n)
 	Вспомогательная функция, выстраивающая
 	массив в пирамиду
 */
-void heapify(long *array, int n)
+void heapify(vector <int> &arr, int arr_size)
 {
-	int i,j;
-	for (i = 1; i < n; i++)
+	int i, j;
+	for (i = 1; i < arr_size; i++)
 	{
-		if (array[i]>array[(i-1)/2])
+		if (arr[i] > arr[(i - 1) / 2])
 		{
 			j = i;
 			while (j != 0)
 			{
-				if (array[j]<=array[(j-1)/2])
+				if (arr[j] <= arr[(j - 1) / 2])
 				{
 					break;
 				}
-				swap(array[j],array[(j-1)/2]);
-				j = (j-1)/2;
+				swap(arr[j], arr[(j - 1) / 2]);
+				j = (j - 1) / 2;
 			}
 		}
 	}
@@ -139,27 +141,13 @@ void heapify(long *array, int n)
 	array — массив,
 	n — его размер.
 */		
-void heap_sort(long *array, int n)
+void heap_sort(vector <int> &arr, int arr_size)
 {
-	heapify(array, n);
-	int end = n-1;
+	heapify(arr, arr_size);
+	int end = arr_size - 1;
 	while (end > 0)
 	{
-		swap(array[0],array[end--]);
-		shiftDown(array, end);
-	}
-}
-void Sorts(long *arr,int n, int sort)
-{
-	switch (sort)
-	{
-	case 1: bubble_sort(arr,n);
-			break;
-	case 2: shell_sort(arr,n);
-			break;
-	case 3: quick_sort(0,n,arr,n);
-			break;
-	case 4: heap_sort(arr,n);
-			break;
+		swap(arr[0], arr[end--]);
+		shift_down(arr, end);
 	}
 }
