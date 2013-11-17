@@ -26,7 +26,7 @@ void PrintCommand::execute (vector <string> params)
 			cout << ' ' << mass[i] << ' ';
 		}
 		cout << endl << "————————————————————————————————————————————————————————————————————\n";
-		if (params[0] != "")
+		if (params.size() == 1)
 		{
 			ofstream output_file(params[0]);
 			for (i = 0; i < n; i++)
