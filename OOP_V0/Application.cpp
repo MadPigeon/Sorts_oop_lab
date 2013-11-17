@@ -14,11 +14,9 @@
 #include <sstream>
 #include <string>
 #include <iostream>
-<<<<<<< HEAD
 #include <iomanip>
-=======
+
 #include <fstream>
->>>>>>> origin/master
 
 using namespace std;
 
@@ -31,9 +29,7 @@ Application::Application(int argc, char **argv) : iter(100)
 	add_command(new PrintCommand(this));
 	add_command(new RandomCommand(this));
 	add_command(new IterationsCommand(this));
-<<<<<<< HEAD
     add_command(new TestCommand(this));
-=======
 
 	if (argc > 1)
 	{
@@ -45,7 +41,6 @@ Application::Application(int argc, char **argv) : iter(100)
 		}
 		the_file.close();
 	}
->>>>>>> origin/master
 }
 Application::~Application(void)
 {
@@ -65,7 +60,7 @@ const vector<ICommand *> & Application::get_command_list() const
 {
 	return commands;
 }
-	
+
 void Application::run(istream & in, ostream &out)
 {
 	ICommand * cmd;
