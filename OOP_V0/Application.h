@@ -10,12 +10,12 @@ using namespace std;
 // команд, поступающих с консоли и хранение информации,
 // специфичной для конкретного приложения
 class Application{
-	map <string,ICommand*> commandMap;
+	map <string, ICommand*> commandMap;
 	vector <ICommand *> commands;
 	vector <int> arr;
 	long iter;
 	vector <string> commands_from_file;
-
+	map <string, vector <string>> SetMap;
 	
 public:
 	Application(void);
@@ -36,4 +36,6 @@ public:
 	virtual inline long long gettimeus();
     virtual void sorts(vector <int> &copy, int sorts_type,int copy_size);
     virtual void output_average_time(string, double average_time);
+	virtual void add_to_set(string, vector <string>);
+	virtual void try_get_set(vector <string> &);
 };

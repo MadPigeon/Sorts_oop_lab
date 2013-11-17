@@ -9,6 +9,7 @@
 #include "Test.h"
 #include "Sorts.h"
 #include "Load.h"
+#include "Set.h"
 
 #include "Functions.h"
 #include <vector>
@@ -32,6 +33,7 @@ Application::Application(int argc, char **argv) : iter(100)
 	add_command(new IterationsCommand(this));
     add_command(new TestCommand(this));
     add_command(new LoadCommand(this));
+	add_command(new SetCommand(this));
 
 	if (argc > 1)
 	{
@@ -166,4 +168,16 @@ void Application::output_average_time(string sorts_name, double average_time)
     cout << sorts_name;
 	cout << "   ";
 	cout << setiosflags (ios::fixed) << average_time << " microseconds "<< endl << endl;
+}
+void Application::add_to_set(string name, vector <string> value)
+{
+	SetMap[name] = value;
+}
+void Application::try_get_set(vector <string> & params)
+{
+	if (SetMap.find(params[0]) != SetMap.end())
+	{
+		params = SetMap[params[0]];
+		params.erase(params.begin());
+	}
 }

@@ -16,7 +16,7 @@ void TestCommand::execute(vector <string> params)
        vector <int> copy;
     int arr_size = arr.size(),
         iter = app->get_iter(),
-        i, sorts_type = 1;
+        l, i, sorts_type = 1;
     long long sorts_time[4] = {0,0,0,0},
 		      iter_time;
     double average_time [4] = {0,0,0,0};
@@ -56,6 +56,15 @@ void TestCommand::execute(vector <string> params)
 				iter_time = -app->gettimeus();
 				app->sorts(copy, sorts_type, arr_size);
 				sorts_time[sorts_type - 1] += app->gettimeus() + iter_time;
+				if(i == 0)
+				{
+					cout << endl;
+					for(l = 0; l < arr_size; l++)
+					{
+						cout << copy[l] << ' ';
+					}
+					cout << endl;
+				}
 			}
 		}
 		

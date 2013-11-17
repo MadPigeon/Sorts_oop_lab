@@ -71,6 +71,7 @@
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Sequence.cpp" />
+    <ClCompile Include="Set.cpp" />
     <ClCompile Include="Sorts.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="timer.cpp" />
@@ -86,6 +87,7 @@
     <ClInclude Include="Print.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Sequence.h" />
+    <ClInclude Include="Set.h" />
     <ClInclude Include="Sorts.h" />
     <ClInclude Include="Test.h" />
   </ItemGroup>

@@ -9,6 +9,7 @@ Sequence::Sequence(Application *appl) : name("sequence"),
 	description("Команда создаёт массив из последующих чисел. Неверные значения игнорируются."),app(appl){}
 void Sequence::execute(vector<string> input)
 {
+	app->try_get_set(input);
 	app->clear_arr();
 	// Максимальное число atol 2147483647
 	int str_numb,string_size, i, p = 0,
