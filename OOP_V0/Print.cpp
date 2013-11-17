@@ -11,6 +11,7 @@ PrintCommand::PrintCommand(Application *appl) : name("print"), description("Выво
 
 void PrintCommand::execute (vector <string> params)
 {
+	app->try_get_set(params);
 	vector <int> mass = app->get_arr();
 	int i, n = mass.size();
 	if(n == 0)
@@ -30,10 +31,11 @@ void PrintCommand::execute (vector <string> params)
 		if (params.size() == 1)
 		{
 			ofstream output_file(params[0]);
-			for (i = 0; i < n; i++)
+			for (i = 0; i < n-1; i++)
 			{
 				output_file << mass[i] << " ";
 			}
+			output_file << mass[i]; // избегаем записи пробела в конце
 			output_file.close();
 			cout << "Также последовательность сохранена в файл: \"" << params[0] << "\"\n";
 		}

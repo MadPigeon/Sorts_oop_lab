@@ -10,6 +10,7 @@ LoadCommand::LoadCommand(Application *appl): name("load"), description("—читывае
 
 void LoadCommand::execute(vector <string> params)
 {
+	app->try_get_set(params);
 	ICommand *cmd = app->get_command("sequence");
 	ifstream input_file(params[0]);
 	app->clear_arr();

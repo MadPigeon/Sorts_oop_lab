@@ -11,6 +11,7 @@ description("«адает количество итераций дл€ теста массива"),app(appl)
 }
 void IterationsCommand:: execute (vector <string> params)
 {
+	app->try_get_set(params);
 	int i, temp;
 	char number[10];
 	int iter_size = params[0].length();
